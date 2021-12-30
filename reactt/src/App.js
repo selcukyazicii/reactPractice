@@ -3,7 +3,7 @@ import React,{Component} from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import User from './components/User';
-
+import Products from './components/Products';
 class App extends Component{
   render(){
     return(
@@ -20,7 +20,18 @@ class App extends Component{
         name="Melo"
         salary="1500"
         department="frontend"
-        />        
+        />
+        <Products
+        skt="9 Nisan"
+        hammadde="plastik"
+        owner="hamdi bey"
+        />
+        <br></br>
+        <Products
+        skt="18 haziran"
+        hammadde="sentetik"
+        owner="mehmet bey"
+        />
       </div>
     )
   }
