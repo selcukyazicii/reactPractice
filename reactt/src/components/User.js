@@ -13,10 +13,12 @@ import PropTypes from 'prop-types'
          isVisible:true
      }          
      onClickEvent=(e)=>{
-        console.log(this);
+        this.setState({
+            isVisible:!this.state.isVisible
+        })
      }   
      
-    render() {
+    render() { 
         const{name,salary,department}=this.props;
         const{isVisible}=this.state;
 
