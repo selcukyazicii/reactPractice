@@ -17,7 +17,9 @@ import PropTypes from 'prop-types'
             isVisible:!this.state.isVisible
         })
      }   
-     
+     alertEVent=()=>{
+         alert("Dur daha burayı yazmadım")
+     }
     render() { 
         const{name,salary,department}=this.props;
         const{isVisible}=this.state;
@@ -27,7 +29,7 @@ import PropTypes from 'prop-types'
                 <div className='card'>
                     <div className='card-header d-flex justify-content-between'>
                     <h4 className='d-inline' onClick={this.onClickEvent}>{name}</h4>
-                    <i className="fas fa-trash"  style={{cursor:"pointer"}}></i>
+                    <i className="fas fa-trash" onClick={this.alertEVent}  style={{cursor:"pointer"}}></i>
                     </div>
                     {
                         isVisible ? <div className="card-body">
@@ -43,7 +45,7 @@ import PropTypes from 'prop-types'
 }
 User.propTypes={
     name:PropTypes.string.isRequired,
-    salary:PropTypes.number.isRequired,
+    salary:PropTypes.string.isRequired,
     department:PropTypes.string.isRequired
 }
 User.defaultProps={
