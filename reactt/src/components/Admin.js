@@ -9,9 +9,7 @@ import React, { Component } from 'react'
              isVisible:!this.state.isVisible
          })
      }
-     alertFunc(){
-         alert("Daha burası yazılmadı")
-     }
+     
     render() {
         const{claims,location}=this.props
         const{isVisible}=this.state
@@ -21,7 +19,7 @@ import React, { Component } from 'react'
                 <div className='card'>
                     <div className='card-header d-flex justify-content-between'>
                     <h4 className='d-inline' onClick={this.onClickEvent}>{claims}</h4>
-                    <i className="fas fa-trash" onClick={this.alertFunc}  style={{cursor:"pointer"}}></i>
+                    {/* <i className="fas fa-trash"   style={{cursor:"pointer"}}></i> */}
                     </div>
                     {
                         isVisible?<div className="card-body">

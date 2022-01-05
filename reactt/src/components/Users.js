@@ -13,7 +13,7 @@ class Users extends Component {
               {users.map((user) => {
                 return (
                   <User
-                    key={user.id}
+                    id={user.id}
                     name={user.name}
                     salary={user.salary}
                     department={user.department}

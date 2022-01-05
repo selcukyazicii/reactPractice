@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
-import User from './components/User';
 
 const UserContext=React.createContext();
 
+const reducer=(state,action)=>{
+  switch(action.type){
+    case "DELETE_USER":
+    return{
+      ...state,
+      users:state.users.filter(users=>action.payload!==users.id)
+    }
+    default :
+    return state
+  }
+}
 export class UserProvider extends Component {
     state={
         users:[
@@ -24,14 +34,18 @@ export class UserProvider extends Component {
               salary:"8500",
               department:"Microsoft Developer"
             }
-          ],
-          admins:[
-                {
-                  id:1,
-                  claims:"Admin",
-                  location:"Izmit"
-                }
-              ]
+          ],                  
+          // admins:[
+          //       {
+          //         id:1,
+          //         claims:"Admin",
+          //         location:"Izmit"
+          //       }
+          //     ],
+
+              dispatch:action=>{
+                this.setState(state=>reducer(state,action))
+              }
     }
     render() {
         return (
